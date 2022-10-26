@@ -1,0 +1,25 @@
+<div>
+  <p>
+    <strong>Name:</strong>
+    <%= @restaurant.name %>
+  </p>
+
+  <p>
+    <strong>Address:</strong>
+    <%= @restaurant.address %>
+  </p>
+
+  <p>
+    <strong>Category:</strong>
+    <%= @restaurant.category %>
+  </p>
+
+  <p>
+    <strong>Reviews:</strong>
+    <% @restaurant.reviews.each do |review| %>
+      <p><%= review.content%>: <%= "⭐️" * review.rating %></p>
+      <% end %>
+  </p>
+
+<%= link_to "Back to restaurants", restaurants_path, class: "btn btn-warning" %>
+</div>
